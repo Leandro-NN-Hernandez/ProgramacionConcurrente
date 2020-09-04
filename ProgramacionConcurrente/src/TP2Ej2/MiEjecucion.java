@@ -13,14 +13,17 @@ public class MiEjecucion extends Thread {
 
     @Override
     public void run() {
+        //llama al metodo ir()
         ir();
     }
 
     public void ir() {
+        //llama al metodo hacerMas()
         hacerMas();
     }
 
     public void hacerMas() {
+        //Imprime "en la pila" 
         System.out.println("En la pila");
     }
 }
