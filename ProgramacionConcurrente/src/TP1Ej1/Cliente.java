@@ -13,9 +13,12 @@ public class Cliente extends Thread {
 
     @Override
     public void run() {
+        //Indica el nombre del hilo actual
         System.out.println("Soy " + Thread.currentThread().getName());
+        //LLama al metodo de clase uso, el cual indica el nombre del hilo en ejeccucion
         Recurso.uso();
         try {
+            //¿Duerme al hilo actual 2 segundos?
             Thread.sleep(2000);
         } catch (InterruptedException e) {
         }

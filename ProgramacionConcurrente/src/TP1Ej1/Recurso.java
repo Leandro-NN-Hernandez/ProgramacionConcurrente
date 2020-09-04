@@ -13,6 +13,7 @@ public class Recurso {
 
      static​​   void​​ 
         uso​() { Thread t = Thread.currentThread();
+        //indica cual es el hilo que llamo al metodo uso()
         System.out.println("En recurso soy:" + t.getName()
         );
     }
