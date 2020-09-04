@@ -31,7 +31,7 @@ public class Cajera {
         System.out.println("La cajera " + this.nombre + " HA TERMINADO DE PROCESAR " + cliente.getNombre() + " EN EL TIEMPO: " + (System.currentTimeMillis() - timeStamp) / 1000 + " seg");
     }
     
-    public void esperarXsegundos(int seg) {
+    private void esperarXsegundos(int seg) {
         try {
             Thread.sleep(seg * 1000);
         } catch (InterruptedException ie) {
