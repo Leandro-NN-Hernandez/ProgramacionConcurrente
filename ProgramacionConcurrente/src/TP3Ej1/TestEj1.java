@@ -18,8 +18,11 @@ public class TestEj1 {
         Luis.start();
         Manuel.start();
 
-        //Hay veces que el resultado es correcto, terminando con un saldo de 0,
+        //      Hay veces que el resultado es correcto, terminando con un saldo de 0,
         //pero la mayoria de las veces el resultado es -10, siendo un resultado 
-        //erroneo
+        //erroneo.
+        //      Convirtiendo a synchronized en el método HacerRetiro(int cantidad)
+        // y un bloque synchronized en el run(), se evita el resultado erroneo del
+        //programa.
     }
 }
