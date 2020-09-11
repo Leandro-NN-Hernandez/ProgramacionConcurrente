@@ -21,6 +21,6 @@ public class ContadorVida {
     }
 
     public void modificarVida(int mod) {
-        vida = vida - mod;
+        vida = vida + mod;
     }
 }

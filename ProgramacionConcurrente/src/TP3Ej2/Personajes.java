@@ -20,17 +20,17 @@ public class Personajes implements Runnable {
     }
 
     private void modificarVida() {
-        cv.modificarVida(modificador);
-        System.out.println(Thread.currentThread().getName() + " modifico vida: " + this.modificador);
-        System.out.println("Vida modificada por " + Thread.currentThread().getName() + " a: " + cv.getVida());
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ie) {
+        synchronized (cv) {
+            cv.modificarVida(modificador);
+            System.out.println(Thread.currentThread().getName() + " modifico vida: " + this.modificador);
+            System.out.println("Vida modificada por " + Thread.currentThread().getName() + " a: " + cv.getVida());            
         }
     }
 
     @Override
     public void run() {
-        modificarVida();
+        for (int i = 0; i < 3; i++) {
+            modificarVida();
+        }
     }
 }
