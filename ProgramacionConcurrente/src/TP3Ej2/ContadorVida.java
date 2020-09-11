@@ -16,11 +16,12 @@ public class ContadorVida {
     public ContadorVida() {
     }
 
-    public int getVida() {
+    public synchronized int getVida() {
         return vida;
     }
 
-    public void modificarVida(int mod) {
+    public synchronized void modificarVida(int mod) {
         vida = vida + mod;
     }
+
 }
