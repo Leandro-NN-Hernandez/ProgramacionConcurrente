@@ -9,18 +9,18 @@ package TP3Ej3;
  *
  * @author Leandro Hernandez
  */
-public class Palabra {
+public class ContadorTurno {
 
     private int turno;
 
-    public Palabra() {
+    public ContadorTurno() {
         turno = 1;
     }
 
-    public synchronized int getTurno() {
-        return turno;
+    public synchronized boolean isTurno(int t) {
+        return (turno == t);
     }
-
+  
     public synchronized void plusTurno() {
         if (turno == 3) {
             turno = 1;

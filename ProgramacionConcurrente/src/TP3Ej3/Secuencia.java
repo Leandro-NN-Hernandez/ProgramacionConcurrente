@@ -11,40 +11,36 @@ package TP3Ej3;
  */
 public class Secuencia implements Runnable {
 
-    private Palabra palabra;
+    private final ContadorTurno contador;
     private final char caracter;
     private final int repeticion;
 
-    public Secuencia(char caracter, int repeticion, Palabra palabra) {
+    public Secuencia(char caracter, int repeticion, ContadorTurno palabra) {
         this.caracter = caracter;
         this.repeticion = repeticion;
-        this.palabra = palabra;
+        this.contador = palabra;
     }
 
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
-            imprimir();
+            while (!imprimir()) {
+            }
         }
     }
 
-    public synchronized void imprimir() {
-        String pal = "";
-        if (palabra.getTurno() == repeticion) {
+    public boolean imprimir() {
+        boolean exito = false;
+        if (contador.isTurno(repeticion)) {
             for (int i = 0; i < repeticion; i++) {
-                pal += caracter;
+                System.out.print(caracter);
             }
-            System.out.print(pal);
-            if (palabra.getTurno() == 3) {
-                System.out.println();
-            }
-            palabra.plusTurno();
-        } else {
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ie) {
-            }
+            contador.plusTurno();
+            exito = true;
         }
+
+        
+        return exito;
     }
 
 }
