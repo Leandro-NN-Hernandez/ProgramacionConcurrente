@@ -15,7 +15,7 @@ public class Surtidor {
     }
 
     public synchronized void usandose(String patente) {
-        System.out.println("El auto " + patente + " esta usando el surtidor");
-        System.out.println("El auto " + patente + " libero el surtidor");
+        System.out.println("El auto " + patente + " esta REPOSTANDO");
+        System.out.println("El auto " + patente + " LIBERO el surtidor");
     }
 }
