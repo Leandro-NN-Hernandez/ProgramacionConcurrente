@@ -23,20 +23,20 @@ public class Secuencia implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             while (!imprimir()) {
+                //repite imprimir hasta que sea su turno
             }
         }
     }
 
     public boolean imprimir() {
-        boolean exito = false;
-        if (contador.isTurno(repeticion)) {
+        boolean exito = contador.isTurno(repeticion);
+        if (exito) {
             for (int i = 0; i < repeticion; i++) {
                 System.out.print(caracter);
             }
             contador.plusTurno();
-            exito = true;
         }
 
         
