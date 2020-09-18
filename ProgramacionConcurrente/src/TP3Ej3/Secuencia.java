@@ -39,7 +39,6 @@ public class Secuencia implements Runnable {
             contador.plusTurno();
         }
 
-        
         return exito;
     }
 

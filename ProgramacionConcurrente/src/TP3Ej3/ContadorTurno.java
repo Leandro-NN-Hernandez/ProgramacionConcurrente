@@ -12,17 +12,19 @@ package TP3Ej3;
 public class ContadorTurno {
 
     private int turno;
+    private final int MAXTURNO;
 
-    public ContadorTurno() {
-        turno = 1;
+    public ContadorTurno(int max) {
+        this.turno = 1;
+        MAXTURNO = max;
     }
 
     public synchronized boolean isTurno(int t) {
         return (turno == t);
     }
-  
+
     public synchronized void plusTurno() {
-        if (turno == 3) {
+        if (turno == MAXTURNO) {
             turno = 1;
         } else {
             turno++;
