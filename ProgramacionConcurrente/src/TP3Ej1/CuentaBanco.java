@@ -36,7 +36,7 @@ public class CuentaBanco {
             System.out.println("No hay suficiente dinero en la cuenta para realizar el retiro Sr." + Thread.currentThread().getName()
             );
             System.out.println("Su saldo actual es de " + this.getBalance());
-            Thread.sleep(1000);
+          
         }
     } // de hacer retiro
 }
