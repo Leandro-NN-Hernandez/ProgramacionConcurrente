@@ -20,14 +20,7 @@ public class TestVida {
         System.out.println("VIDA: " + cv.getVida());
         orco.start();
         curandero.start();
-        try {
-            orco.join();
-            curandero.join();
-        } catch (InterruptedException ie) {
-
         }
-        System.out.println("VIDA: " + cv.getVida());
-    }
 
     //El resultado de ejecutarlo varias veces, resulta que cada vez el orden de ejecucion cambia.
 }

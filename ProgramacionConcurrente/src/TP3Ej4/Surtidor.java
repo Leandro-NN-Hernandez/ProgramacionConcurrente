@@ -16,6 +16,10 @@ public class Surtidor {
 
     public synchronized void usandose(String patente) {
         System.out.println("El auto " + patente + " esta REPOSTANDO");
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException ie) {
+        }
         System.out.println("El auto " + patente + " LIBERO el surtidor");
     }
 }

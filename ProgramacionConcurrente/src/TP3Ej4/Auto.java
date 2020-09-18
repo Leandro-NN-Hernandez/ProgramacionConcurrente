@@ -26,7 +26,6 @@ public class Auto implements Runnable {
 
     @Override
     public void run() {
-
         for (int i = 0; i < vueltas; i++) {
             System.out.println("El auto " + patente + " esta ANDANDO");
             for (kmRecorridos = 0; kmRecorridos < kmMaximos; kmRecorridos++) {
@@ -38,6 +37,7 @@ public class Auto implements Runnable {
             System.out.println("El auto " + patente + " se FRENO");
             if (vueltas - 1 != i) {
                 surtidor.usandose(patente);
+
             } else {
                 System.out.println("EL AUTO " + patente + " SE PARO DEFINITIVAMENTE");
             }
